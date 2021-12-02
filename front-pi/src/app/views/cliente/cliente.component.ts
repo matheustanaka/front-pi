@@ -13,6 +13,8 @@ export class ClienteComponent implements OnInit {
 
   clienteEdicao?: Cliente = undefined;
 
+  estaEditando = false;
+
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
@@ -29,17 +31,30 @@ export class ClienteComponent implements OnInit {
     if(this.clienteEdicao == undefined) {
       return
     }
-    this.clienteService.inserir(this.clienteEdicao).subscribe(() => {
+    if(!this.estaEditando){
+      this.clienteService.inserir(this.clienteEdicao).subscribe(() => {
+        this.listarClientes();
+        this.cancelar();
+      })
+    } else {
       this.listarClientes();
       this.cancelar();
-    })
+      this.estaEditando = false;
+    }
   }
 
   novoCliente() {
     this.clienteEdicao = new Cliente();
+    this.estaEditando = false;
   }
 
   cancelar() {
     this.clienteEdicao = undefined;
+    this.estaEditando = false;
+  }
+
+  selecionarCliente(cliente: Cliente) {
+    this.clienteEdicao = cliente;
+    this.estaEditando = true;
   }
 }
