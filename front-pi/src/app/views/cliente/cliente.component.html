@@ -1,1 +1,9 @@
-<p>cliente works!</p>
+<div>
+  <h2>Gerenciamento de Clientes</h2>
+
+  <ul class="menu">
+    <li *ngFor="let cliente of clientes">
+      {{cliente.nome}} - {{cliente.email}} - {{cliente.cpf}} - {{cliente.senha}}
+    </li>
+  </ul>
+</div>
