@@ -57,4 +57,13 @@ export class ClienteComponent implements OnInit {
     this.clienteEdicao = cliente;
     this.estaEditando = true;
   }
+
+  excluir(cliente: Cliente) {
+    const resposta = confirm(`O Cliente ${cliente.nome} foi excluído`);
+    if(resposta && cliente.id && cliente) {
+      this.clienteService.excluir(cliente.id).subscribe(() => {
+        this.listarClientes();
+      })
+    }
+  }
 }

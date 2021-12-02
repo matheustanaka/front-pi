@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/cliente';
@@ -23,5 +23,11 @@ export class ClienteService {
 
   atualizar(cliente: Cliente): Observable<void> {
     return this.http.put<void>(clientLink, cliente);
+  }
+
+  excluir(id: number): Observable<void> {
+    let parametro = new HttpParams;
+    parametro = parametro.append('id', id);
+    return this.http.delete<void>(clientLink, {params: parametro});
   }
 }

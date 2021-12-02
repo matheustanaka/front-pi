@@ -7,9 +7,14 @@
   </ul>
 
   <ul class="menu">
-    <li *ngFor="let cliente of clientes" (click)="selecionarCliente(cliente)">
-      {{ cliente.nome }} - {{ cliente.email }} - {{ cliente.cpf }} -
-      {{ cliente.senha }}
+    <li *ngFor="let cliente of clientes" >
+      <span class="botaoEditar" (click)="selecionarCliente(cliente)">
+        {{ cliente.nome }} - {{ cliente.email }} - {{ cliente.cpf }} -
+        {{ cliente.senha }}
+      </span>
+      <span class="botaoExcluir" (click)="excluir(cliente)">
+        X
+      </span>
     </li>
   </ul>
 </div>
