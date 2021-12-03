@@ -42,7 +42,7 @@ export class RoupaComponent implements OnInit {
     }
   }
 
-  novoCliente() {
+  novaRoupa() {
     this.roupaEdicao = new Roupa();
     this.estaEditando = false;
   }
