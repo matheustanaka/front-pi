@@ -26,7 +26,7 @@ export class RoupaService {
 
   excluir(id: number): Observable<void> {
     let parametro = new HttpParams;
-    parametro = parametro.append('id', id);
+    parametro = parametro.append('id_roupa', id);
     return this.http.delete<void>(roupaLink, {params: parametro});
   }
 }

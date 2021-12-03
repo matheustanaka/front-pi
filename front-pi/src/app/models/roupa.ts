@@ -1,6 +1,6 @@
 export class Roupa {
 
-  id_roupa?: number;
+  id?: number;
   tipoRoupa?: string;
   marca?: string;
   tamanho?: string;
@@ -8,8 +8,8 @@ export class Roupa {
   estoque?: number;
 
 
-  constructor (id_roupa?: number, tipoRoupa?: string, marca?: string, tamanho?: string, preco?: number, estoque?: number) {
-    this.id_roupa = id_roupa;
+  constructor (id?: number, tipoRoupa?: string, marca?: string, tamanho?: string, preco?: number, estoque?: number) {
+    this.id = id;
     this.tipoRoupa = tipoRoupa;
     this.marca = marca;
     this.tamanho = tamanho;

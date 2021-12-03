@@ -58,9 +58,9 @@ export class RoupaComponent implements OnInit {
   }
 
   excluir(roupa: Roupa) {
-    const resposta = confirm(`A ${roupa.tipoRoupa} da ${roupa.marca} foi excluída`);
-    if(resposta && roupa.id_roupa && roupa) {
-      this.roupaService.excluir(roupa.id_roupa).subscribe(() => {
+    const resposta = confirm(`${roupa.tipoRoupa} da ${roupa.marca} foi excluído`);
+    if(resposta && roupa && roupa.id) {
+      this.roupaService.excluir(roupa.id).subscribe(() => {
         this.listarRoupas();
       })
     }
