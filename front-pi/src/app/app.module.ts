@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ClienteComponent } from './views/cliente/cliente.component';
 import { FormsModule } from '@angular/forms';
 import { RoupaComponent } from './views/roupa/roupa.component';
+import { PagamentoComponent } from './views/pagamento/pagamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    RoupaComponent
+    RoupaComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,

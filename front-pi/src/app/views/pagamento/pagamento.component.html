@@ -1,0 +1,31 @@
+<div>
+  <h2>Gerenciamento de Pagamentos</h2>
+  <ul>
+    <li (click)="novoPagamento()">
+      Novo Pagamento
+    </li>
+  </ul>
+  <ul class="menu">
+    <li *ngFor="let pagamento of pagamentos" >
+      <span class="botaoEditar" (click)="selecionarPagamento(pagamento)">
+      Tipo de Pagamento: {{ pagamento.tipoPagamento }}
+      </span>
+      <span class="botaoExcluir" (click)="excluir(pagamento)">
+        X
+      </span>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="pagamentoEdicao">
+    <h2>Insira os dados do pagamento</h2>
+    <ul>
+      <li>
+        <label for="name">Tipo de Pagamento </label>
+        <input type="text" name="nome" [(ngModel)]="pagamentoEdicao.tipoPagamento" />
+      </li>
+    </ul>
+    <button (click)="salvar()">Salvar</button>
+    <button (click)="cancelar()">Cancelar</button>
+</div>
+
