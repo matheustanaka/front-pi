@@ -52,7 +52,7 @@ export class RoupaComponent implements OnInit {
     this.estaEditando = false;
   }
 
-  selecionarCliente(roupa: Roupa) {
+  selecionarRoupa(roupa: Roupa) {
     this.roupaEdicao = roupa;
     this.estaEditando = true;
   }
