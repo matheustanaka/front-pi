@@ -1,1 +1,48 @@
-<p>roupa works!</p>
+<div>
+  <h2>Gerenciamento de Roupas</h2>
+  <ul>
+    <li (click)="novaRoupa()">
+      Nova Roupa
+    </li>
+  </ul>
+  <ul class="menu">
+    <li *ngFor="let roupa of roupas" >
+      <span class="botaoEditar" (click)="selecionarRoupa(roupa)">
+      Tipo: {{ roupa.tipoRoupa }} - Marca: {{ roupa.marca }} - tamanho: {{ roupa.tamanho }}
+       - Preço:{{ roupa.preco }} - Estoque: {{ roupa.estoque }}
+      </span>
+      <span class="botaoExcluir" (click)="excluir(roupa)">
+        X
+      </span>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="roupaEdicao">
+    <h2>Insira os dados da Roupa</h2>
+    <ul>
+      <li>
+        <label for="name">Tipo </label>
+        <input type="text" name="tipo" [(ngModel)]="roupaEdicao.tipoRoupa" />
+      </li>
+      <li>
+        <label for="name">Marca </label>
+        <input type="email" name="marca" [(ngModel)]="roupaEdicao.marca" />
+      </li>
+      <li>
+        <label for="name">Tamanho </label>
+        <input type="text" name="tamanho" [(ngModel)]="roupaEdicao.tamanho"/>
+      </li>
+      <li>
+        <label for="name">Preço </label>
+        <input type="text" number="preço" [(ngModel)]="roupaEdicao.preco"/>
+      </li>
+      <li>
+        <label for="name">Estoque </label>
+        <input type="number" name="estoque" [(ngModel)]="roupaEdicao.estoque"/>
+      </li>
+    </ul>
+    <button (click)="salvar()">Salvar</button>
+    <button (click)="cancelar()">Cancelar</button>
+</div>
+
