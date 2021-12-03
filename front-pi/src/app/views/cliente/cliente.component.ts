@@ -37,9 +37,10 @@ export class ClienteComponent implements OnInit {
         this.cancelar();
       })
     } else {
-      this.listarClientes();
-      this.cancelar();
-      this.estaEditando = false;
+      this.clienteService.atualizar(this.clienteEdicao).subscribe(()=> {
+        this.listarClientes();
+        this.cancelar();
+      })
     }
   }
 
