@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from '../models/cliente';
+import { Cliente } from '../../models/cliente';
 const clientLink = 'http://localhost:8080/exemplo-cadastro/webapi/cliente';
 @Injectable({
   providedIn: 'root'
