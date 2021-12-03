@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Roupa } from 'src/app/models/roupa';
-import { RoupaService } from 'src/app/services/roupa.service';
+import { RoupaService } from 'src/app/services/roupa/roupa.service';
 @Component({
   selector: 'app-roupa',
   templateUrl: './roupa.component.html',
