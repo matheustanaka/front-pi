@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Roupa } from '../models/roupa';
 
-const roupaLink = 'localhost:8080/exemplo-cadastro/webapi/roupas';
+const roupaLink = 'http://localhost:8080/exemplo-cadastro/webapi/roupas';
 
 @Injectable({
   providedIn: 'root'
