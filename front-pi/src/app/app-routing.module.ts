@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: "roupa",
     component: RoupaComponent
-  }
+  },
   {
     path: "pagamento",
     component: PagamentoComponent
