@@ -1,0 +1,28 @@
+<div>
+  <h2>Gerenciamento de Vendas</h2>
+  <ul>
+    <h3>
+      Relatório
+    </h3>
+    <li>
+        <label for="name">Data Inicial</label>
+        <input type="date" name="dataInicial" [(ngModel)]="dataInicial" />
+    </li>
+    <li>
+      <label for="name">Data Final</label>
+      <input type="date" name="dataFinal" [(ngModel)]="dataFinal" />
+    </li>
+    <button (click)="listarVenda()">Gerar Relatório</button>
+  </ul>
+  <ul class="menu">
+    <li *ngFor="let venda of vendas" >
+      Cliente: {{venda.cliente.nome}}
+      <ul>
+        <li *ngFor="let itemVenda of venda.itensVendidos" >
+          <span class="botaoEditar">
+            Produto: {{itemVenda.roupa.tipoRoupa}}
+          </span>
+        </li>
+      </ul>
+  </ul>
+</div>
