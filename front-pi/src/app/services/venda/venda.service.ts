@@ -15,7 +15,16 @@ export class VendaService {
     return this.http.get<Venda[]>(vendaLink);
   }
 
+  listar(dataInicial: Date, dataFinal: Date): Observable<Venda[]> {
+    let parametro = new HttpParams;
+    parametro = parametro.append('dataInicial', dataInicial.toString());
+    parametro = parametro.append('dataFinal', dataFinal.toString());
+    return this.http.get<Venda[]>(vendaLink, {params: parametro});
+  }
+
   fazerVenda(venda: Venda): Observable<void> {
     return this.http.post<void>(vendaLink, venda);
   }
+
+
 }
