@@ -7,7 +7,8 @@ import { ClienteComponent } from './views/cliente/cliente.component';
 import { FormsModule } from '@angular/forms';
 import { RoupaComponent } from './views/roupa/roupa.component';
 import { PagamentoComponent } from './views/pagamento/pagamento.component';
-import { VendaComponent } from './views/venda/venda.component';
+import { VendaComponent } from './views/relatorioVenda/venda.component';
+import { FazerVendaComponent } from './views/fazer-venda/fazer-venda.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VendaComponent } from './views/venda/venda.component';
     ClienteComponent,
     RoupaComponent,
     PagamentoComponent,
-    VendaComponent
+    VendaComponent,
+    FazerVendaComponent
   ],
   imports: [
     BrowserModule,
