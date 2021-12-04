@@ -2,12 +2,11 @@ import {Roupa} from './roupa'
 
 export class ItemVenda {
 
-  roupa?: Roupa = new Roupa();
+  roupa = new Roupa();
   quantidadeVendida?: number;
   precoVendido?: number;
 
-  constructor(roupa?: Roupa, quantidadeVendida?: number, precoVendido?: number) {
-    this.roupa = roupa;
+  constructor(quantidadeVendida?: number, precoVendido?: number) {
     this.quantidadeVendida = quantidadeVendida;
     this.precoVendido = precoVendido;
 
