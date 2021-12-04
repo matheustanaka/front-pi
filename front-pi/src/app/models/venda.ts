@@ -6,16 +6,13 @@ export class Venda {
   id_venda?: number;
   numero_venda?: number;
   dataVenda?: Date;
-  itemVenda?: ItemVenda[];
-  cliente?: Cliente = new Cliente();
-  pagamento?: Pagamento = new Pagamento();
+  itensVendidos = new Array <ItemVenda>();
+  cliente = new Cliente();
+  pagamento = new Pagamento();
 
-  constructor(id_venda?: number, numero_venda?: number, dataVenda?: Date, itemVenda?: ItemVenda[], cliente?: Cliente, pagamento?: Pagamento) {
+  constructor(id_venda?: number, numero_venda?: number, dataVenda?: Date) {
     this.id_venda = id_venda;
     this.numero_venda = numero_venda;
     this.dataVenda = dataVenda;
-    this.itemVenda = itemVenda;
-    this.cliente = cliente;
-    this.pagamento = pagamento;
   }
 }
