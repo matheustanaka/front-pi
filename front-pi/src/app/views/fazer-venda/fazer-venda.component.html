@@ -1,1 +1,63 @@
-<p>fazer-venda works!</p>
+<div>
+  <h2 (click)="novaVenda()">Fazer Venda</h2>
+</div>
+
+<div *ngIf="vendaEdicao">
+  <h2>Insira os dados da Venda</h2>
+  <ul>
+    <li>
+      <label for="name">Numero da Venda: </label>
+      <input
+        type="number"
+        name="numero_venda"
+        [(ngModel)]="venda.numeroVenda"
+      />
+    </li>
+    <li>
+      <label for="name">Data da Venda: </label>
+      <input type="date" name="dataVenda" [(ngModel)]="venda.dataVenda"/>
+    </li>
+
+    <label for="select">Insira o Nome do Cliente: </label>
+    <select [(ngModel)]="venda.cliente.id">
+      <option *ngFor="let cliente of clientes" value="{{ cliente.id }}">
+        {{ cliente.nome }}
+      </option>
+    </select>
+    <br />
+
+    <label for="pagamento">Insira o ID do Pagamento: </label>
+    <select [(ngModel)]="venda.pagamento.id_pagamento">
+      <option
+        *ngFor="let pagamento of pagamentos"
+        value="{{ pagamento.id_pagamento }}"
+      >
+        {{ pagamento.tipoPagamento }}
+      </option>
+    </select>
+    <br />
+
+    <label for="roupa">Insira a roupa: </label>
+    <select [(ngModel)]="roupa.id">
+      <option *ngFor="let roupa of roupas" value={{roupa.id}}>
+        {{ roupa.tipoRoupa }}
+      </option>
+    </select>
+    <br />
+
+    <label for="">Insira a Quantidade Vendida: </label>
+    <input type="number" [(ngModel)]="quantidadeVendida" />
+    <br>
+    <button (click)="adicionarRoupa()">Adicionar Roupa</button>
+    <br />
+
+    <ul class="menu">
+      <li *ngFor="let itemVenda of venda.itensVendidos">
+        <span>
+          quantidadeVendida {{ itemVenda.quantidadeVendida }} - Produto: {{itemVenda.roupa.id}}
+        </span>
+      </li>
+    </ul>
+  </ul>
+  <button (click)="fazerVenda()">Fazer Venda</button>
+</div>
