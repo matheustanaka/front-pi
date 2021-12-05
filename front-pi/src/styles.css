@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #F7FBFC;
@@ -8,4 +13,39 @@ body {
 
 html {
   min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 35px;
+  color: #3F72AF;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  color: #3F72AF;
+  text-decoration: none;
+}
+
+.flex-item {
+  background-color: #B9D7EA;
+  width: 200px;
+  height: 100px;
+  margin-top: 35px;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+
+  border-radius: 8px;
 }
