@@ -30,6 +30,8 @@ export class FazerVendaComponent implements OnInit {
   roupa = new Roupa();
   quantidadeVendida = 1;
 
+  itemVenda = new ItemVenda();
+
 
   constructor(private vendaService: VendaService, private clienteService: ClienteService, private roupaService: RoupaService, private pagamentoService: PagamentoService) { }
 
