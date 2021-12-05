@@ -47,22 +47,7 @@ export class VendaComponent implements OnInit {
     this.estaEditando = true;
   }
 
-  salvar(): void {
-    if(this.vendaEdicao== undefined) {
-      return
-    }
-    if(!this.estaEditando){
-      this.vendaService.fazerVenda(this.vendaEdicao).subscribe(() => {
-        this.listarVenda();
-        this.cancelar();
-      })
-    } else {
-      this.vendaService.fazerVenda(this.vendaEdicao).subscribe(()=> {
-        this.listarVenda();
-        this.cancelar();
-      })
-    }
-  }
+
 
   cancelar() {
     this.vendaEdicao = undefined;

@@ -16,11 +16,15 @@
   </ul>
   <ul class="menu">
     <li *ngFor="let venda of vendas" >
-      Cliente: {{venda.cliente.nome}}
+      Nome do Cliente: {{venda.cliente.nome}}
       <ul>
         <li *ngFor="let itemVenda of venda.itensVendidos" >
           <span class="botaoEditar">
-            Produto: {{itemVenda.roupa.tipoRoupa}}
+            Produto Comprado: {{itemVenda.roupa.tipoRoupa}} <br>
+            Forma de Pagamento: {{venda.pagamento.tipoPagamento}} <br>
+            Preço Vendido: {{itemVenda.precoVendido}} <br>
+            Quantidade Comprada: {{itemVenda.quantidadeVendida}} <br>
+            Data de Compra: {{venda.dataVenda}}
           </span>
         </li>
       </ul>
