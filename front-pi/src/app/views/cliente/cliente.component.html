@@ -1,44 +1,52 @@
-<div>
-  <h2>Gerenciamento de Clientes</h2>
-  <ul>
-    <li (click)="novoCliente()">
-      Novo Cliente
-    </li>
-  </ul>
-  <ul class="menu">
-    <li *ngFor="let cliente of clientes" >
-      <span class="botaoEditar" (click)="selecionarCliente(cliente)">
-      Nome: {{ cliente.nome }} - Email: {{ cliente.email }} - CPF: {{ cliente.cpf }}
-       - Senha:{{ cliente.senha }}
-      </span>
-      <span class="botaoExcluir" (click)="excluir(cliente)">
-        X
-      </span>
-    </li>
-  </ul>
-</div>
+<section class="client">
+  <div class="new-client">
+    <button class="btn-client" (click)="novoCliente()">Novo Cliente</button>
+  </div>
+  <form>
+    <div class="title">
+      <h2>Insira os Dados do Cliente</h2>
+    </div>
+    <fieldset *ngIf="clienteEdicao">
+      <div class="fiel-group">
+        <div class="field">
+          <label for="name">Nome </label>
+          <input type="text" name="nome" [(ngModel)]="clienteEdicao.nome" />
+        </div>
+      </div>
+      <div class="fiel-group">
+        <div class="field">
+          <label for="name">Email </label>
+          <input type="text" name="email" [(ngModel)]="clienteEdicao.email" />
+        </div>
+      </div>
+      <div class="fiel-group">
+        <div class="field">
+          <label for="name">CPF </label>
+          <input type="text" name="cpf" [(ngModel)]="clienteEdicao.cpf" />
+        </div>
+      </div>
+      <div class="fiel-group">
+        <div class="field">
+          <label for="name">Senha </label>
+          <input type="text" name="senha" [(ngModel)]="clienteEdicao.senha" />
+        </div>
+      </div>
+      <button (click)="salvar()">Salvar</button>
+      <button (click)="cancelar()">Cancelar</button>
+    </fieldset>
+  </form>
 
-<div *ngIf="clienteEdicao">
-    <h2>Insira os dados do Cliente</h2>
-    <ul>
-      <li>
-        <label for="name">Nome </label>
-        <input type="text" name="nome" [(ngModel)]="clienteEdicao.nome" />
-      </li>
-      <li>
-        <label for="name">Email </label>
-        <input type="email" name="email" [(ngModel)]="clienteEdicao.email" />
-      </li>
-      <li>
-        <label for="name">CPF </label>
-        <input type="text" name="cpf" [(ngModel)]="clienteEdicao.cpf"/>
-      </li>
-      <li>
-        <label for="name">Senha </label>
-        <input type="text" name="senha" [(ngModel)]="clienteEdicao.senha"/>
+  <div>
+    <div class="novo-cliente"></div>
+    <ul class="menu">
+      <li *ngFor="let cliente of clientes">
+        <span class="botaoEditar" (click)="selecionarCliente(cliente)">
+          Nome: {{ cliente.nome }} - Email: {{ cliente.email }} - CPF:
+          {{ cliente.cpf }} - Senha:{{ cliente.senha }}
+        </span>
+        <span class="botaoExcluir" (click)="excluir(cliente)"> X </span>
       </li>
     </ul>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
-</div>
+  </div>
 
+</section>
