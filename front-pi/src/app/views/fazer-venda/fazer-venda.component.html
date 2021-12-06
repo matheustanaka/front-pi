@@ -1,8 +1,8 @@
-<div>
+<div class="center">
   <h2 (click)="novaVenda()">Fazer Venda</h2>
 </div>
 
-<div *ngIf="vendaEdicao">
+<div *ngIf="vendaEdicao" class="center">
   <h2>Insira os dados da Venda</h2>
   <ul>
     <li>
@@ -47,9 +47,6 @@
     <label for="">Insira o Preço Vendido: </label>
     <input type="number" [(ngModel)]="roupa.preco" />
     <br>
-    <button (click)="adicionarRoupa()">Adicionar Roupa</button>
-    <br />
-
     <ul class="menu">
       <li *ngFor="let itemVenda of venda.itensVendidos">
         <span>
