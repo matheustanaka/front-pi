@@ -18,7 +18,7 @@ export class ClienteComponent implements OnInit {
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
-    this.listarClientes();
+    //this.listarClientes();
   }
 
   listarClientes(): void {
