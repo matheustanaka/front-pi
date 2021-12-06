@@ -21,6 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,9 +45,6 @@ import {MatSelectModule} from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule
-  ],
-  providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
   ],
   bootstrap: [AppComponent]
 })
