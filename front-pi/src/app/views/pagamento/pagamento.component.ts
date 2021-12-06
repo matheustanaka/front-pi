@@ -18,7 +18,7 @@ export class PagamentoComponent implements OnInit {
   constructor(private pagamentoService: PagamentoService) { }
 
   ngOnInit(): void {
-    this.listarPagamento();
+   // this.listarPagamento();
   }
 
   listarPagamento(): void {
