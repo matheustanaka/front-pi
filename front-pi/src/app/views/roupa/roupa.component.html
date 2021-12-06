@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title>Gerenciamento de Clientes</mat-card-title>
+  <mat-card-title>Gerenciamento de Roupas</mat-card-title>
   <button mat-button (click)="novaRoupa()">Nova Roupa</button>
   <ul class="menu">
     <li *ngFor="let roupa of roupas" >
@@ -7,9 +7,9 @@
       Tipo: {{ roupa.tipoRoupa }} - Marca: {{ roupa.marca }} - tamanho: {{ roupa.tamanho }}
        - Preço:{{ roupa.preco }} - Estoque: {{ roupa.estoque }}
       </span>
-      <span class="botaoExcluir" (click)="excluir(roupa)">
+      <button mat-button class="botaoExcluir" (click)="excluir(roupa)">
         X
-      </span>
+      </button>
     </li>
   </ul>
 
