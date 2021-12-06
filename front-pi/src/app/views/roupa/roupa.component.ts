@@ -16,7 +16,7 @@ export class RoupaComponent implements OnInit {
   constructor(private roupaService: RoupaService) { }
 
   ngOnInit(): void {
-    this.listarRoupas();
+  //  this.listarRoupas();
   }
 
   listarRoupas(): void {

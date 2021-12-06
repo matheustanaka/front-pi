@@ -1,31 +1,45 @@
-<div>
-  <h2>Gerenciamento de Pagamentos</h2>
-  <ul>
-    <li (click)="novoPagamento()">
-      Novo Pagamento
-    </li>
-  </ul>
-  <ul class="menu">
-    <li *ngFor="let pagamento of pagamentos" >
-      <span class="botaoEditar" (click)="selecionarPagamento(pagamento)">
-      Tipo de Pagamento: {{ pagamento.tipoPagamento }}
-      </span>
-      <span class="botaoExcluir" (click)="excluir(pagamento)">
-        X
-      </span>
-    </li>
-  </ul>
-</div>
+<section class="client">
+  <div class="new-client">
+    <button class="btn-client" (click)="novoPagamento()">Novo Pagamento</button>
+  </div>
+  <form>
+    <div class="title">
+      <h2>Insira os Dados do Cliente</h2>
+    </div>
+    <fieldset *ngIf="pagamentoEdicao">
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Tipo de Pagamento </label>
+          <input type="text" name="nome" [(ngModel)]="pagamentoEdicao.tipoPagamento" />
+        </div>
+      </div>
+      <div class="btns">
+        <div class="btn-save">
+          <button (click)="salvar()">Salvar</button>
+        </div>
+        <div class="btn-cancel">
+          <button (click)="cancelar()">Cancelar</button>
+        </div>
+      </div>
 
-<div *ngIf="pagamentoEdicao">
-    <h2>Insira os dados do pagamento</h2>
-    <ul>
-      <li>
-        <label for="name">Tipo de Pagamento </label>
-        <input type="text" name="nome" [(ngModel)]="pagamentoEdicao.tipoPagamento" />
-      </li>
-    </ul>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
-</div>
+    </fieldset>
+  </form>
 
+
+    <div class="list-client">
+      <ul class="list-clients">
+        <li *ngFor="let pagamento of pagamentos">
+          <div class="result">
+            <span class="botaoEditar" (click)="selecionarPagamento(pagamento)">
+              <label for="nome">Tipo de Pagamento</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarPagamento(pagamento)" >
+                {{pagamento.tipoPagamento}}
+              </span>
+            </span>
+            <span class="botaoExcluir" (click)="excluir(pagamento)"> X </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+</section>

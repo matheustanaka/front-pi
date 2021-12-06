@@ -1,48 +1,85 @@
-<div>
-  <h2>Gerenciamento de Roupas</h2>
-  <ul>
-    <li (click)="novaRoupa()">
-      Nova Roupa
-    </li>
-  </ul>
-  <ul class="menu">
-    <li *ngFor="let roupa of roupas" >
-      <span class="botaoEditar" (click)="selecionarRoupa(roupa)">
-      Tipo: {{ roupa.tipoRoupa }} - Marca: {{ roupa.marca }} - tamanho: {{ roupa.tamanho }}
-       - Preço:{{ roupa.preco }} - Estoque: {{ roupa.estoque }}
-      </span>
-      <span class="botaoExcluir" (click)="excluir(roupa)">
-        X
-      </span>
-    </li>
-  </ul>
-</div>
+<section class="client">
+  <div class="new-client">
+    <button class="btn-client" (click)="novaRoupa()">Nova Roupa</button>
+  </div>
+  <form>
+    <div class="title">
+      <h2>Insira os Dados da Roupa</h2>
+    </div>
+    <fieldset *ngIf="roupaEdicao">
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Tipo </label>
+          <input type="text" name="nome" [(ngModel)]="roupaEdicao.tipoRoupa" />
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Marca </label>
+          <input type="text" name="email" [(ngModel)]="roupaEdicao.marca" />
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Tamanho </label>
+          <input type="text" name="cpf" [(ngModel)]="roupaEdicao.tamanho" />
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Preço </label>
+          <input type="text" name="senha" [(ngModel)]="roupaEdicao.preco" />
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Estoque </label>
+          <input type="text" name="senha" [(ngModel)]="roupaEdicao.estoque" />
+        </div>
+      </div>
+      <div class="btns">
+        <div class="btn-save">
+          <button (click)="salvar()">Salvar</button>
+        </div>
+        <div class="btn-cancel">
+          <button (click)="cancelar()">Cancelar</button>
+        </div>
+      </div>
 
-<div *ngIf="roupaEdicao">
-    <h2>Insira os dados da Roupa</h2>
-    <ul>
-      <li>
-        <label for="name">Tipo </label>
-        <input type="text" name="tipo" [(ngModel)]="roupaEdicao.tipoRoupa" />
-      </li>
-      <li>
-        <label for="name">Marca </label>
-        <input type="email" name="marca" [(ngModel)]="roupaEdicao.marca" />
-      </li>
-      <li>
-        <label for="name">Tamanho </label>
-        <input type="text" name="tamanho" [(ngModel)]="roupaEdicao.tamanho"/>
-      </li>
-      <li>
-        <label for="name">Preço </label>
-        <input type="text" number="preço" [(ngModel)]="roupaEdicao.preco"/>
-      </li>
-      <li>
-        <label for="name">Estoque </label>
-        <input type="number" name="estoque" [(ngModel)]="roupaEdicao.estoque"/>
-      </li>
-    </ul>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
-</div>
+    </fieldset>
+  </form>
 
+
+    <div class="list-client">
+      <ul class="list-clients">
+        <li *ngFor="let roupa of roupas">
+          <div class="result">
+            <span class="botaoEditar" (click)="selecionarRoupa(roupa)">
+              <label for="nome">Tipo</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarRoupa(roupa)" >
+                {{roupa.tipoRoupa}}
+              </span>
+              <label for="nome">Marca</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarRoupa(roupa)" >
+               {{ roupa.marca }}
+              </span>
+              <label for="nome">Tamanho</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarRoupa(roupa)" >
+                {{roupa.tamanho}}
+              </span>
+              <label for="nome">Preço</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarRoupa(roupa)" >
+                {{roupa.preco}}
+              </span>
+              <label for="nome">Estoque</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarRoupa(roupa)" >
+                {{roupa.estoque}}
+              </span>
+            </span>
+            <span class="botaoExcluir" (click)="excluir(roupa)"> X </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+</section>

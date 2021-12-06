@@ -7,46 +7,69 @@
       <h2>Insira os Dados do Cliente</h2>
     </div>
     <fieldset *ngIf="clienteEdicao">
-      <div class="fiel-group">
+      <div class="field-group">
         <div class="field">
           <label for="name">Nome </label>
           <input type="text" name="nome" [(ngModel)]="clienteEdicao.nome" />
         </div>
       </div>
-      <div class="fiel-group">
+      <div class="field-group">
         <div class="field">
           <label for="name">Email </label>
           <input type="text" name="email" [(ngModel)]="clienteEdicao.email" />
         </div>
       </div>
-      <div class="fiel-group">
+      <div class="field-group">
         <div class="field">
           <label for="name">CPF </label>
           <input type="text" name="cpf" [(ngModel)]="clienteEdicao.cpf" />
         </div>
       </div>
-      <div class="fiel-group">
+      <div class="field-group">
         <div class="field">
           <label for="name">Senha </label>
           <input type="text" name="senha" [(ngModel)]="clienteEdicao.senha" />
         </div>
       </div>
-      <button (click)="salvar()">Salvar</button>
-      <button (click)="cancelar()">Cancelar</button>
+      <div class="btns">
+        <div class="btn-save">
+          <button (click)="salvar()">Salvar</button>
+        </div>
+        <div class="btn-cancel">
+          <button (click)="cancelar()">Cancelar</button>
+        </div>
+      </div>
+
     </fieldset>
   </form>
 
-  <div>
-    <div class="novo-cliente"></div>
-    <ul class="menu">
-      <li *ngFor="let cliente of clientes">
-        <span class="botaoEditar" (click)="selecionarCliente(cliente)">
-          Nome: {{ cliente.nome }} - Email: {{ cliente.email }} - CPF:
-          {{ cliente.cpf }} - Senha:{{ cliente.senha }}
-        </span>
-        <span class="botaoExcluir" (click)="excluir(cliente)"> X </span>
-      </li>
-    </ul>
-  </div>
+
+    <div class="list-client">
+      <ul class="list-clients">
+        <li *ngFor="let cliente of clientes">
+          <div class="result">
+            <span class="botaoEditar" (click)="selecionarCliente(cliente)">
+              <h3>Nome</h3>
+              <span id="client-result" class="botaoEditar" (click)="selecionarCliente(cliente)" >
+                {{cliente.nome}}
+              </span>
+              <label for="nome">Email</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarCliente(cliente)" >
+               {{ cliente.email }}
+              </span>
+              <label for="nome">CPF</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarCliente(cliente)" >
+                {{cliente.cpf}}
+              </span>
+              <label for="nome">Senha</label>
+              <span id="client-result" class="botaoEditar" (click)="selecionarCliente(cliente)" >
+                {{cliente.senha}}
+              </span>
+            </span>
+            <span class="botaoExcluir" (click)="excluir(cliente)"> X </span>
+          </div>
+        </li>
+      </ul>
+    </div>
 
 </section>
