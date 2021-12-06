@@ -1,12 +1,10 @@
 <div class="center">
   <h2>Gerenciamento de Vendas</h2>
   <ul>
-    <h3>
-      Relatório
-    </h3>
+    <h3>Relatório</h3>
     <li>
-        <label for="name">Data Inicial</label>
-        <input type="date" name="dataInicial" [(ngModel)]="dataInicial" />
+      <label for="name">Data Inicial</label>
+      <input type="date" name="dataInicial" [(ngModel)]="dataInicial" />
     </li>
     <li>
       <label for="name">Data Final</label>
@@ -15,18 +13,34 @@
     <button (click)="listarVenda()">Gerar Relatório</button>
   </ul>
   <ul class="menu">
-    <li *ngFor="let venda of vendas" >
-      Nome do Cliente: {{venda.cliente.nome}}
+    <li *ngFor="let venda of vendas">
+      Nome do Cliente: {{ venda.cliente.nome }}
       <ul>
-        <li *ngFor="let itemVenda of venda.itensVendidos" >
-          <span class="botaoEditar">
-            Produto Comprado: {{itemVenda.roupa.tipoRoupa}} <br>
-            Forma de Pagamento: {{venda.pagamento.tipoPagamento}} <br>
-            Preço Vendido: {{itemVenda.precoVendido}} <br>
-            Quantidade Comprada: {{itemVenda.quantidadeVendida}} <br>
-            Data de Compra: {{venda.dataVenda}}
-          </span>
+        <li *ngFor="let itemVenda of venda.itensVendidos">
+          <ul>
+            <li>Produto Comprado: {{ itemVenda.roupa.tipoRoupa }} <br /></li>
+            <ul>
+              <li>
+                Forma de Pagamento: {{ venda.pagamento.tipoPagamento }} <br />
+              </li>
+              <ul>
+                <li>
+                  Preço Vendido: {{ itemVenda.precoVendido }} <br />
+                  <ul>
+                    <li>
+                      Quantidade Comprada: {{ itemVenda.quantidadeVendida }}
+                      <br />
+                      <ul>
+                        <li>Data de Compra: {{ venda.dataVenda }}</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </ul>
+          </ul>
         </li>
       </ul>
+    </li>
   </ul>
 </div>
