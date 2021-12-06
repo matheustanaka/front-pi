@@ -1,19 +1,24 @@
-<div>
-  <h2>Gerenciamento de Vendas</h2>
-  <ul>
-    <h3>
-      Relatório
-    </h3>
-    <li>
-        <label for="name">Data Inicial</label>
-        <input type="date" name="dataInicial" [(ngModel)]="dataInicial" />
-    </li>
-    <li>
-      <label for="name">Data Final</label>
-      <input type="date" name="dataFinal" [(ngModel)]="dataFinal" />
-    </li>
-    <button (click)="listarVenda()">Gerar Relatório</button>
-  </ul>
+<mat-card>
+  <mat-card-title>Gerenciamento de Vendas</mat-card-title>
+  <mat-card-subtitle>Relatório</mat-card-subtitle>
+  <div class="menu">
+    <mat-form-field appearance="fill">
+      <mat-label>Data Inicial</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="dataInicial">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="menu">
+    <mat-form-field appearance="fill">
+      <mat-label>Data Final</mat-label>
+      <input matInput [matDatepicker]="pickerEnd" [(ngModel)]="dataFinal">
+      <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEnd></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <button mat-button (click)="listarVenda()">Gerar Relatório</button>
+
   <ul class="menu">
     <li *ngFor="let venda of vendas" >
       Nome do Cliente: {{venda.cliente.nome}}
@@ -29,4 +34,4 @@
         </li>
       </ul>
   </ul>
-</div>
+</mat-card>

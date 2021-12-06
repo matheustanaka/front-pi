@@ -1,44 +1,44 @@
-<div>
-  <h2>Gerenciamento de Clientes</h2>
-  <ul>
-    <li (click)="novoCliente()">
-      Novo Cliente
-    </li>
-  </ul>
+<mat-card>
+  <mat-card-title>Gerenciamento de Clientes</mat-card-title>
+  <button mat-button (click)="novoCliente()">Novo Cliente</button>
   <ul class="menu">
     <li *ngFor="let cliente of clientes" >
       <span class="botaoEditar" (click)="selecionarCliente(cliente)">
       Nome: {{ cliente.nome }} - Email: {{ cliente.email }} - CPF: {{ cliente.cpf }}
        - Senha:{{ cliente.senha }}
-      </span>
+      </span> X
       <span class="botaoExcluir" (click)="excluir(cliente)">
         X
       </span>
     </li>
   </ul>
-</div>
 
 <div *ngIf="clienteEdicao">
-    <h2>Insira os dados do Cliente</h2>
-    <ul>
-      <li>
-        <label for="name">Nome </label>
-        <input type="text" name="nome" [(ngModel)]="clienteEdicao.nome" />
-      </li>
-      <li>
-        <label for="name">Email </label>
-        <input type="email" name="email" [(ngModel)]="clienteEdicao.email" />
-      </li>
-      <li>
-        <label for="name">CPF </label>
-        <input type="text" name="cpf" [(ngModel)]="clienteEdicao.cpf"/>
-      </li>
-      <li>
-        <label for="name">Senha </label>
-        <input type="text" name="senha" [(ngModel)]="clienteEdicao.senha"/>
-      </li>
-    </ul>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" [(ngModel)]="clienteEdicao.nome" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label> Email</mat-label>
+        <input matInput type="mail" [(ngModel)]="clienteEdicao.email" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput type="text"[(ngModel)]="clienteEdicao.cpf" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password"[(ngModel)]="clienteEdicao.senha" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="salvar()">Salvar</button>
+    <button mat-raised-button (click)="cancelar()">Cancelar</button>
 </div>
 

@@ -1,0 +1,21 @@
+.toolbar-color {
+  background-color: #27488f;
+}
+
+.label-color{
+  color: white;
+}
+
+.menu {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.menu-button {
+  margin-right: 10px;
+}
+
+.logo{
+  height: 70px;
+  width: 90px;
+}

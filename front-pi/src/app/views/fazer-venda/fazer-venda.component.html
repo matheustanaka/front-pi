@@ -1,54 +1,69 @@
-<div>
-  <h2 (click)="novaVenda()">Fazer Venda</h2>
-</div>
+<mat-card>
+
+  <mat-card-title>Vendas</mat-card-title>
+
+  <button mat-button (click)="novaVenda()">Nova Venda</button>
 
 <div *ngIf="vendaEdicao">
   <h2>Insira os dados da Venda</h2>
-  <ul>
-    <li>
-      <label for="name">Numero da Venda: </label>
-      <input
-        type="number"
-        name="numero_venda"
-        [(ngModel)]="venda.numeroVenda"
-      />
-    </li>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Número da Venda: </mat-label>
+        <input matInput type="number" [(ngModel)]="venda.numeroVenda" autocomplete="off">
+      </mat-form-field>
+    </div>
 
-    <label for="select">Insira o Nome do Cliente: </label>
-    <select [(ngModel)]="venda.cliente.id">
-      <option *ngFor="let cliente of clientes" value="{{ cliente.id }}">
-        {{ cliente.nome }}
-      </option>
-    </select>
-    <br />
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Insira o Nome do Cliente: </mat-label>
+        <input matInput type="text" [(ngModel)]="venda.cliente.id" autocomplete="off">
+        <mat-select [(ngModel)]="venda.cliente.id" name="cliente">
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+            {{cliente.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <label for="pagamento">Insira o ID do Pagamento: </label>
-    <select [(ngModel)]="venda.pagamento.id_pagamento">
-      <option
-        *ngFor="let pagamento of pagamentos"
-        value="{{ pagamento.id_pagamento }}"
-      >
-        {{ pagamento.tipoPagamento }}
-      </option>
-    </select>
-    <br />
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Insira o ID do Pagamento:</mat-label>
+        <input matInput type="text" [(ngModel)]="venda.cliente.id" autocomplete="off">
+        <mat-select [(ngModel)]="venda.pagamento.id_pagamento" name="pagamento">
+          <mat-option *ngFor="let pagamento of pagamentos" [value]="pagamento.id_pagamento">
+            {{pagamento.tipoPagamento}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <label for="roupa">Insira a roupa: </label>
-    <select [(ngModel)]="roupa.id">
-      <option *ngFor="let roupa of roupas" value={{roupa.id}}>
-        {{ roupa.tipoRoupa }}
-      </option>
-    </select>
-    <br />
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Insira a roupa:</mat-label>
+        <input matInput type="text" [(ngModel)]="roupa.id" autocomplete="off">
+        <mat-select [(ngModel)]="roupa.id" name="roupa">
+          <mat-option *ngFor="let roupa of roupas" [value]="roupa.id">
+            {{roupa.tipoRoupa}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <label for="">Insira a Quantidade Vendida: </label>
-    <input type="number" [(ngModel)]="quantidadeVendida" />
-    <br>
-    <label for="">Insira o Preço Vendido: </label>
-    <input type="number" [(ngModel)]="roupa.preco" />
-    <br>
-    <button (click)="adicionarRoupa()">Adicionar Roupa</button>
-    <br />
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Insira a Quantidade Vendida:</mat-label>
+        <input matInput type="number" [(ngModel)]="quantidadeVendida" autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Insira o Preço Vendido:</mat-label>
+        <input matInput type="text" [(ngModel)]="roupa.preco" autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <button mat-button (click)="adicionarRoupa()">Adicionar Roupa</button>
 
     <ul class="menu">
       <li *ngFor="let itemVenda of venda.itensVendidos">
@@ -57,6 +72,7 @@
         </span>
       </li>
     </ul>
-  </ul>
-  <button (click)="fazerVenda()">Fazer Venda</button>
+
+  <button mat-button (click)="fazerVenda()">Fazer Venda</button>
 </div>
+</mat-card>

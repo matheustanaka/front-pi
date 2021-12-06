@@ -1,10 +1,6 @@
-<div>
-  <h2>Gerenciamento de Roupas</h2>
-  <ul>
-    <li (click)="novaRoupa()">
-      Nova Roupa
-    </li>
-  </ul>
+<mat-card>
+  <mat-card-title>Gerenciamento de Clientes</mat-card-title>
+  <button mat-button (click)="novaRoupa()">Nova Roupa</button>
   <ul class="menu">
     <li *ngFor="let roupa of roupas" >
       <span class="botaoEditar" (click)="selecionarRoupa(roupa)">
@@ -16,33 +12,43 @@
       </span>
     </li>
   </ul>
-</div>
 
 <div *ngIf="roupaEdicao">
     <h2>Insira os dados da Roupa</h2>
-    <ul>
-      <li>
-        <label for="name">Tipo </label>
-        <input type="text" name="tipo" [(ngModel)]="roupaEdicao.tipoRoupa" />
-      </li>
-      <li>
-        <label for="name">Marca </label>
-        <input type="email" name="marca" [(ngModel)]="roupaEdicao.marca" />
-      </li>
-      <li>
-        <label for="name">Tamanho </label>
-        <input type="text" name="tamanho" [(ngModel)]="roupaEdicao.tamanho"/>
-      </li>
-      <li>
-        <label for="name">Preço </label>
-        <input type="text" number="preço" [(ngModel)]="roupaEdicao.preco"/>
-      </li>
-      <li>
-        <label for="name">Estoque </label>
-        <input type="number" name="estoque" [(ngModel)]="roupaEdicao.estoque"/>
-      </li>
-    </ul>
-    <button (click)="salvar()">Salvar</button>
-    <button (click)="cancelar()">Cancelar</button>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <input matInput type="text" [(ngModel)]="roupaEdicao.tipoRoupa" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label> Marca</mat-label>
+        <input matInput type="text" [(ngModel)]="roupaEdicao.marca" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Tamanho</mat-label>
+        <input matInput type="text" [(ngModel)]="roupaEdicao.tamanho" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Preço</mat-label>
+        <input matInput type="text" [(ngModel)]="roupaEdicao.preco" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="menu">
+      <mat-form-field appearance="fill">
+        <mat-label>Estoque</mat-label>
+        <input matInput type="number" [(ngModel)]="roupaEdicao.estoque" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="salvar()">Salvar</button>
+    <button mat-raised-button (click)="cancelar()">Cancelar</button>
 </div>
+</mat-card>
+
+
 

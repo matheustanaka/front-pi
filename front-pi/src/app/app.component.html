@@ -1,23 +1,30 @@
 <div>
-  <h1>Paris Clothes</h1>
-  <div>
-    <ul class="list">
-      <li class="flex-item">
+  <mat-toolbar class="toolbar-color">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span class="label-color">Paris Clothes</span>
+    <div>
+      <img class="logo" src="/assets/imagens/torre.png" alt="paris">
+    </div>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  <div class="menu">
+    <button mat-raised-button class="menu-button">
         <a routerLink="/cliente">Cliente</a>
-      </li>
-      <li class="flex-item">
-        <a routerLink="/roupa">Roupa</a>
-      </li>
-      <li class="flex-item">
-        <a routerLink="/pagamento">Pagamento</a>
-      </li>
-      <li class="flex-item">
-        <a routerLink="/venda">Relatório</a>
-      </li>
-      <li class="flex-item">
-        <a routerLink="/fazervenda">Função de Venda</a>
-      </li>
-    </ul>
+    </button>
+    <button mat-raised-button class="menu-button">
+      <a routerLink="/roupa">Roupa</a>
+    </button>
+    <button mat-raised-button class="menu-button">
+      <a routerLink="/pagamento">Pagamento</a>
+    </button>
+    <button mat-raised-button class="menu-button">
+      <a routerLink="/venda">Relatório</a>
+    </button>
+    <button mat-raised-button class="menu-button">
+      <a routerLink="/fazervenda">Função de Venda</a>
+    </button>
   </div>
   <router-outlet></router-outlet>
 </div>
